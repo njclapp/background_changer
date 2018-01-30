@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# FOR CRONJOB
+# export DBUS_SESSION_BUS_ADDRESS environment variable
+PID=$(pgrep gnome-session)
+export DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$PID/environ|cut -d= -f2-)
+
+date=$(date +%H)
+while (true)
+do
+	if [ $date -ge 20 ] || [ $date -le 7 ]; # Night mode
+	then
+	{
+		/usr/bin/gsettings set org.gnome.desktop.background picture-uri file:///home/$USER/Pictures/debian_dark.jpg
+		sleep 900
+	}
+	elif [ $date -ge 8 ] && [ $date -le 19 ]; # Day mode
+	then
+	{
+		/usr/bin/gsettings set org.gnome.desktop.background picture-uri file:///home/$USER/Pictures/debian_light.jpg
+		sleep 900
+	}
+	fi
+done
