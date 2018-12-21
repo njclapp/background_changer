@@ -1,7 +1,7 @@
 #!/bin/bash
 # Setup script for background changer scripts
 
-sudo cp *mode /usr/local/bin # Move day-mode/night-mode, leave background-change alone
+sudo cp * /usr/local/bin 
 
 # Cycle through modes to ensure they work
 day-mode
