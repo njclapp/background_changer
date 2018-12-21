@@ -4,11 +4,11 @@ date=$(date +%H)
 if [ $date -ge 20 ] || [ $date -le 7 ]; # Night mode
 then
 {
-	/usr/bin/gsettings set org.gnome.desktop.background picture-uri file:///home/$USER/Pictures/Dark/$(ls /home/$USER/Pictures/Dark/ | sort -R | tail -1)
+	/usr/bin/gsettings set org.gnome.desktop.background picture-uri file:///home/$USER/Pictures/Dark/$(ls /home/$USER/Pictures/dark/ | sort -R | tail -1)
 }
 elif [ $date -ge 8 ] && [ $date -le 19 ]; # Day mode
 then
 {
-	/usr/bin/gsettings set org.gnome.desktop.background picture-uri file:///home/$USER/Pictures/Light/$(ls /home/$USER/Pictures/Light/ | sort -R | tail -1)
+	/usr/bin/gsettings set org.gnome.desktop.background picture-uri file:///home/$USER/Pictures/Light/$(ls /home/$USER/Pictures/light/ | sort -R | tail -1)
 }
 fi

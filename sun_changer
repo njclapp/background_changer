@@ -1,0 +1,45 @@
+#!/bin/bash
+
+#date=$(date +%H)
+date=$1
+if [ $date -ge 23 ] || [ $date -lt 6 ];
+then
+{
+	/usr/bin/gsettings set org.gnome.desktop.background picture-uri file:///home/$USER/Pictures/sun_positionals/late_night.png
+}
+elif [ $date -ge 6 ] && [ $date -lt 9 ];
+then
+{
+    /usr/bin/gsettings set org.gnome.desktop.background picture-uri file:///home/$USER/Pictures/sun_positionals/morning.png
+}
+elif [ $date -ge 9 ] && [ $date -lt 11 ];
+then
+{
+    /usr/bin/gsettings set org.gnome.desktop.background picture-uri file:///home/$USER/Pictures/sun_positionals/late_morning.png
+}
+elif [ $date -ge 11 ] && [ $date -lt 14 ];
+then
+{
+    /usr/bin/gsettings set org.gnome.desktop.background picture-uri file:///home/$USER/Pictures/sun_positionals/afternoon.png
+}
+elif [ $date -ge 15 ] && [ $date -lt 16 ];
+then
+{
+    /usr/bin/gsettings set org.gnome.desktop.background picture-uri file:///home/$USER/Pictures/sun_positionals/late_afternoon.png
+}
+elif [ $date -ge 17 ] && [ $date -lt 18 ];
+then
+{
+    /usr/bin/gsettings set org.gnome.desktop.background picture-uri file:///home/$USER/Pictures/sun_positionals/evening.png
+}
+elif [ $date -ge 19 ] && [ $date -lt 20 ];
+then
+{
+    /usr/bin/gsettings set org.gnome.desktop.background picture-uri file:///home/$USER/Pictures/sun_positionals/late_evening.png
+}
+elif [ $date -ge 20 ] && [ $date -lt 22 ];
+then
+{
+    /usr/bin/gsettings set org.gnome.desktop.background picture-uri file:///home/$USER/Pictures/sun_positionals/night.png
+}
+fi
