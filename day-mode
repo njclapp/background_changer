@@ -6,4 +6,4 @@
 #export DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$PID/environ|cut -d= -f2-)
 
 echo "Switching to day mode..."
-/usr/bin/gsettings set org.gnome.desktop.background picture-uri file:///home/$USER/Pictures/light/$(ls /home/$USER/Pictures/light/ | sort -R | tail -1)
+/usr/bin/gsettings set org.gnome.desktop.background picture-uri file:///home/$USER/Pictures/wallpapers/light/$(ls /home/$USER/Pictures/wallpapers/light/ | sort -R | tail -1)
